@@ -1,2 +1,2 @@
 #!/bin/bash
-find . type -f | tail -n10
+find . type -f | tail
