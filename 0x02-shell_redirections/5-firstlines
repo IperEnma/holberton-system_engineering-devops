@@ -1,2 +1,2 @@
 #!/bin/bash
-tail 5-firstlines
+head 5-firstlines
