@@ -1,2 +1,2 @@
 #!/bin/bash
-find . type -d,f -empty | xargs -l1 -i{} name "{}"
+find . -empty print"%f\n"
