@@ -3,5 +3,5 @@
 while [[ $x -le 9 ]]
 do
     echo "Best School"
-    x=$(( $x + 1 ))
+    x=$(( x + 1 ))
 done
