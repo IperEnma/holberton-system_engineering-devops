@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#print luck
 x=1 
 until [[ $x -gt 10 ]]
 do
