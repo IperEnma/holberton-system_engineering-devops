@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#print best school
 x=1
 
 until [[ $x -gt 10 ]]
