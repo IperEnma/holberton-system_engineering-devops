@@ -1,5 +1,5 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
+#comment
 for counter in {1..100}
 do
     if [ $(expr $counter % 5) == 0 ] && [ $(expr $counter % 3) == 0 ]
