@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #comment
-files=`ls $search_dir`
-for file in $files; do
-    echo $file | cut -d '-' -f2
+files=$(ls)
+for file in $files 
+do
+    echo "$file" | cut -d '-' -f2
 done
