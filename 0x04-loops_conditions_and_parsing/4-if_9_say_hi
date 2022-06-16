@@ -1,0 +1,12 @@
+#!/bin/bash
+x=1 
+until [[ $x -gt 10 ]]
+do
+    if [ $x -ne 9 ]
+    then
+        echo "Best School"
+    else
+        echo "Hi"
+    fi
+    ((x++))
+done

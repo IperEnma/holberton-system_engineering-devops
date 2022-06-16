@@ -1,0 +1,5 @@
+#!/bin/bash
+files=`ls $search_dir`
+for file in $files; do
+    echo $file | cut -d '-' -f2
+done

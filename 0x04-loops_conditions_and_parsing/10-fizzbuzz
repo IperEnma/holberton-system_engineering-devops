@@ -1,0 +1,17 @@
+#!/bin/bash
+
+for counter in {1..100}
+do
+    if [ $(expr $counter % 5) == 0 ] && [ $(expr $counter % 3) == 0 ]
+    then
+        echo "FizzBuzz"
+    elif [ $(expr $counter % 3) == 0 ]
+    then
+        echo "Fizz"
+    elif [ $(expr $counter % 5) == 0 ]
+    then
+        echo "Buzz"
+    else
+        echo $counter
+    fi
+done

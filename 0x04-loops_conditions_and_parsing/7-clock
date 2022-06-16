@@ -1,0 +1,15 @@
+#!/bin/bash
+hour=0
+minutes=0
+
+while [[ $hour -le 12 ]]
+do
+    echo "Hour: $hour"
+    minutes=1
+    while  [[ $minutes -le 59 ]]
+    do
+        echo $minutes
+        ((minutes++))
+    done
+    ((hour++))
+done
