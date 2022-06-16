@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #comment
-cat apache-access.log | cut -d ' ' -f1,9
+cat apache-access.log | awk -F " " '{print $1, $9}'
