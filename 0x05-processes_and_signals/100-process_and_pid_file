@@ -4,12 +4,12 @@ echo "$$" > /var/run/myscript.pid
 function kind
 {
     echo "I hate the kill command"
+    rm /var/run/myscript.pid
+    exit
 }
 function control_c
 {
     echo "Y U no love me?!"
-    rm /var/run/myscript.pid
-    exit
 }
 function quit
 {
@@ -17,8 +17,8 @@ function quit
     exit
 }
 trap quit SIGQUIT
-trap control_c SIGTERM
-trap kind SIGINT
+trap control_c SIGINT
+trap kind SIGTERM
 while :
 do
     echo "To infinity and beyond"
