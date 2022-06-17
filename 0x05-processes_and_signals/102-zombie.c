@@ -14,7 +14,7 @@ int main(void)
 	while (i < 5)
 	{
 		child_pid = fork();
-		if (child_pid == 0)
+		if (child_pid <= 0)
 			exit(0);
 		printf("Zombie process created, PID: %d\n", child_pid);
 		i++;
