@@ -7,9 +7,12 @@
  */
 int infinite_while(void)
 {
-	while (1)
+    int i = 0;
+
+	while (i < 20)
 	{
 		sleep(1);
+        i++;
 	}
 	return (0);
 }
