@@ -1,0 +1,12 @@
+#!/bin/bash
+#comment
+function control_c 
+{
+    echo "I am invincible!!!"
+}
+trap control_c SIGTERM
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
