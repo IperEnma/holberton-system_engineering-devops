@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# connect force private key
+ssh -i ~/.ssh/school ubuntu@34.201.143.161

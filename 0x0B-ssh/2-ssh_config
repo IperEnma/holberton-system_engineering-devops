@@ -1,0 +1,2 @@
+host 34.201.143.161
+	IdentityFile ~/.ssh/school	

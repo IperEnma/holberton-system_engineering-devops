@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# creates an RSA key pair 4096
+ssh-keygen -t rsa -b 4096 << EOF
+school
+betty
+betty
+EOF
