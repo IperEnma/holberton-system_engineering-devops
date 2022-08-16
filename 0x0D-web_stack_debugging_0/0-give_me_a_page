@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #debugging docker error
-sudo docker exec -it 47fd5d5f5afa3443249de6d0df8ddb4a3bcb20b250c26aef186dbf0d5f29e6a2 sudo service apache2 restart
+sudo service apache2 restart
