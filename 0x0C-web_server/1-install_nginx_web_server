@@ -2,6 +2,7 @@
 #comment
 sudo apt update -y
 sudo apt install -y nginx
+sudo ufw allow 'Nginx HTTP'
 sudo chmod -R 777 /var/www/html
 sudo echo "Hello World" > /var/www/html/index.html
 sudo /etc/init.d/nginx restart
