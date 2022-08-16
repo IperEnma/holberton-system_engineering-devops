@@ -6,5 +6,5 @@ sudo apt install -y nginx
 sudo chmod -R 777 /var/www/html
 sudo echo "Hello World" | sudo tee /var/www/html/index.html
 sudo /etc/init.d/nginx restart
-sudo sed -i '/^.*server_name.*/a location /redirect_me {rewrite ^/redirect_me(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4/$1 redirect;}' /etc/nginx/sites-available/default
+sudo sed -i '/^.*server_name _;.*/a location /redirect_me {rewrite ^/redirect_me(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4/$1 redirect;}' /etc/nginx/sites-available/default
 sudo /etc/init.d/nginx restart
