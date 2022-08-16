@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#debugging docker error
+# debugging docker error
 
 sudo service apache2 start
