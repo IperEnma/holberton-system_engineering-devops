@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #install balance loader
-
 sudo apt-get update -y
 sudo apt-get install -y haproxy
 sudo echo 'frontend web-front
