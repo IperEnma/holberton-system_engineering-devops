@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# display information about subdomains
+
+get_inf()
+{
+	domain=$1
+	subdomain=$2
+	ip=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print;}' | cut -d '	' -f5)
+	register=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print;}' | cut -d '	' -f4)
+}
+if [ $# -eq 1 ]
+then
+	get_inf "$1" "www"
+	echo "The subdomain www is a $register record and points to $ip"
+	get_inf "$1" "lb-01"
+	echo "The subdomain lb-01 is a $register record and points to $ip"
+	get_inf "$1" "web-01"
+	echo "The subdomain web-01 is a $register record and points to $ip"
+	get_inf "$1" "web-02"
+	echo "The subdomain web-02 is a $register record and points to $ip"
+else
+	get_inf "$1" "$2"
+	echo "The subdomain $2 is a $register record and points to $ip"
+fi
