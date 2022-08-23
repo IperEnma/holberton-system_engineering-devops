@@ -5,8 +5,8 @@ get_inf()
 {
 	domain=$1
 	subdomain=$2
-	ip=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print;}' | cut -d '	' -f5)
-	register=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print;}' | cut -d '	' -f4)
+	ip=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print $5;}')
+	register=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print $4;}')
 }
 if [ -z "$2" ]
 then
