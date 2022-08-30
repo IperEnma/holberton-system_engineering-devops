@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# create a compress backup
+dt=$(date '+%d-%m-%Y')
+echo $dt
+mysqldump --user=root --password=$1 --all-databases --master-data | sudo tee backup.sql
+tar -czvf $dt.tar.gz backup.sql
