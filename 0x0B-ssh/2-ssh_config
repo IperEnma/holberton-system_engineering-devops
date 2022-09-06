@@ -53,3 +53,9 @@ Host *
 
 host 34.201.143.161
 	IdentityFile ~/.ssh/school
+
+host 35.175.196.152
+	IdentityFile ~/.ssh/school
+
+host 54.234.171.106
+	IdentityFile ~/.ssh/school
