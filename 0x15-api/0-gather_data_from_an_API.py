@@ -20,4 +20,4 @@ print("Employee {} is done with tasks({}/{}):".format(
     tasks))
 for _dict in posts:
     if _dict['completed'] is True:
-        print("     {}".format(_dict['title']))
+        print("\t {}".format(_dict['title']))
