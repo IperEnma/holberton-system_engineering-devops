@@ -22,5 +22,5 @@ if __name__ == '__main__':
         from_csv.append(str(dict_posts.get('completed')))
         from_csv.append(str(dict_posts.get('title')))
         with open("{}".format(user_id) + ".csv", "a") as file:
-            writer = csv.writer(file)
+            writer = csv.writer(file, dialect='unix')
             writer.writerow(from_csv)
