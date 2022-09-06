@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """given employee ID"""
-from sys import argv
 import requests
+from sys import argv
 
 
 response_user = requests.get(
