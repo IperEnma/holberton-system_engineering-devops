@@ -19,7 +19,11 @@ if __name__ == '__main__':
                 user_id))
     posts = response_posts.json()
 
-    for dict_posts in posts:
-        with open("{}".format(user_id) + ".csv", "w") as file:
-            writer = csv.writer(file, dialect='unix')
-            writer.writerow([user_id, name, dict_posts.get('completed'), dict_posts.get('title')])
+    with open("{}".format(user_id) + ".csv", "w") as file:
+        writer = csv.writer(file, dialect='unix')
+        for dict_posts in posts:
+            writer.writerow(
+                    [user_id,
+                        name,
+                        dict_posts.get('completed'),
+                        dict_posts.get('title')])
