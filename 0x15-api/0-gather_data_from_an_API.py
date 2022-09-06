@@ -3,7 +3,9 @@
 import requests
 from sys import argv
 
-response_user = requests.get('https://jsonplaceholder.typicode.com/users/{}'.format(argv[1]))
+response_user = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}'.format(
+            argv[1]))
 user = response_user.json()
 user_id = user['id']
 response_posts = requests.get(
