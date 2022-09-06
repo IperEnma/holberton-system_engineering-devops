@@ -16,7 +16,7 @@ posts = response_posts.json()
 tasks = len(posts)
 completed = 0
 for _dict in posts:
-    if _dicti.get('completed') is True:
+    if _dict.get('completed') is True:
         completed += 1
 print("Employee {} is done with tasks({}/{}):".format(
     user['name'],
