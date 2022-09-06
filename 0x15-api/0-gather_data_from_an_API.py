@@ -3,6 +3,7 @@
 import requests
 from sys import argv
 
+
 response_user = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(
             argv[1]))
