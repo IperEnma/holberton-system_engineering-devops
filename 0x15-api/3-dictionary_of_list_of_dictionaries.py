@@ -8,7 +8,6 @@ from sys import argv
 
 if __name__ == '__main__':
 
-
     response_users_all = requests.get(
             'https://jsonplaceholder.typicode.com/users')
 
