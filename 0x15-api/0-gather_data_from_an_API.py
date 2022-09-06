@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """given employee ID"""
 import requests
-from sys import argv
+import sys
 
 
 response_user = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(
-            argv[1]))
+            sys.argv[1]))
 user = response_user.json()
 user_id = user['id']
 response_posts = requests.get(
