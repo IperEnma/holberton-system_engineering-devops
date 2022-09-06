@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""given employee ID"""
+"""given employee ID and tittles"""
+
 import requests
 from sys import argv
 
-
 if __name__ == '__main__':
+    """principal function"""
+
     response_user = requests.get(
             'https://jsonplaceholder.typicode.com/users/{}'.format(
                 argv[1]))
@@ -26,4 +28,3 @@ if __name__ == '__main__':
     for _dict in posts:
         if _dict.get('completed') is True:
             print("\t {}".format(_dict['title']))
-
