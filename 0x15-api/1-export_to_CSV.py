@@ -13,7 +13,7 @@ if __name__ == '__main__':
             'https://jsonplaceholder.typicode.com/users/{}'.format(
                 user_id))
     user = response_user.json()
-    name = user.get('name')
+    name = user.get('username')
     response_posts = requests.get(
             'https://jsonplaceholder.typicode.com/todos?userId={}'.format(
                 user_id))
