@@ -17,7 +17,7 @@ def recurse(subreddit, hot_list=[]):
             'From': 'enmanuelhernandez1843@gmail.com'
             }
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, allow_redirects=False)
         response_json = response.json()
         for idx in range(len(response_json['data']['children'])):
             hot_list.append(response_json['data']['children'][idx]['data']['title'])
