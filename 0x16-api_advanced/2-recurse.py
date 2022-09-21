@@ -18,6 +18,8 @@ def recurse(subreddit, hot_list=[]):
             }
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
+        if response.status_code >= 400:
+            return None
         response_json = response.json()
         for idx in range(len(response_json['data']['children'])):
             hot_list.append(response_json['data']['children'][idx]['data']['title'])
