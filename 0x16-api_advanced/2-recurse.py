@@ -27,5 +27,5 @@ def recurse(subreddit, hot_list=[]):
             subreddit = response_json['data']['children'][0]['data']['subreddit']
             after = response_json['data']['after']
             return recurse([subreddit, after], hot_list)
-    except Exception as e:
-        print(e)
+    except Exception:
+        return None
