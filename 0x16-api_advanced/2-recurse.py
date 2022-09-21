@@ -9,7 +9,10 @@ def recurse(subreddit, hot_list=[]):
     if type(subreddit) is not list:
         url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     else:
-        url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(subreddit[0], subreddit[1])
+        url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
+                subreddit[0],
+                subreddit[1],
+                subreddit[2])
 
     headers = {
             'User-Agent':
@@ -18,8 +21,6 @@ def recurse(subreddit, hot_list=[]):
             }
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
-        if response.status_code >= 400:
-            return None
         response_json = response.json()
         for idx in range(len(response_json['data']['children'])):
             hot_list.append(response_json['data']['children'][idx]['data']['title'])
@@ -28,6 +29,7 @@ def recurse(subreddit, hot_list=[]):
         else:
             subreddit = response_json['data']['children'][0]['data']['subreddit']
             after = response_json['data']['after']
-            return recurse([subreddit, after], hot_list)
+            count = response_json['data']['dist']
+            return recurse([subreddit, after, count], hot_list)
     except Exception:
         return None
