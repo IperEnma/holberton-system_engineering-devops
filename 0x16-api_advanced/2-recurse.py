@@ -11,25 +11,25 @@ def recurse(subreddit, hot_list=[]):
     else:
         url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
                 subreddit[0],
-                subreddit[1],
-                subreddit[2])
+                subreddit[1])
 
     headers = {
             'User-Agent':
-            'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0',
+            'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) \
+                    Gecko/20100101 Firefox/81.0',
             'From': 'enmanuelhernandez1843@gmail.com'
             }
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
         response_json = response.json()
         for idx in range(len(response_json['data']['children'])):
-            hot_list.append(response_json['data']['children'][idx]['data']['title'])
+            hot_list.append(
+                    response_json['data']['children'][idx]['data']['title'])
         if (response_json['data']['after']) is None:
             return hot_list
         else:
-            subreddit = response_json['data']['children'][0]['data']['subreddit']
+            sub = response_json['data']['children'][0]['data']['subreddit']
             after = response_json['data']['after']
-            count = response_json['data']['dist']
-            return recurse([subreddit, after, count], hot_list)
+            return recurse([sub, after], hot_list)
     except Exception:
         return None
