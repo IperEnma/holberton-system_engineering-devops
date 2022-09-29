@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve web dynamic
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/holberton/holbertonschool-AirBnB_clone_v4/
+Environment=”PATH=/home/ubuntu/holberton/holbertonschool-AirBnB_clone_v4/enviroment”
+ExecStart=/home/ubuntu/holberton/holbertonschool-AirBnB_clone_v4/enviroment/bin/gunicorn --access-logfile /tmp/airbnb-access.log --log-file /tmp/airbnb-error.log --workers 3 --bind unix:/home/ubuntu/holberton/holbertonschool-AirBnB_clone_v4/dynamic.sock -m 007 web_dynamic.2-hbnb:app
+
+[Install]
+WantedBy=multi-user.target
